@@ -69,7 +69,14 @@ This will start the server, and you should be able to access the application by 
 |-- requirements.txt    # Python Dependencies file
 ```
 
+### **Contributing**
+Contributions to this project are welcome. Please follow the standard fork-pull request workflow. Make sure your code adheres to the existing style, and update or add tests as necessary.
 
+### **Author**
+_ Savakroth LEAV - `https://github.com/savakroth`
 
-
-
+### **Acknowledgments**
+Hats off to:
+_ https://github.com/Frost-Codes
+_ https://github.com/GauriSP10
+For Inspiring this Project
