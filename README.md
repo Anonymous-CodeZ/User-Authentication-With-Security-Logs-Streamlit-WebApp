@@ -29,13 +29,13 @@ To run this application, you will need Python installed on your system.
 ### **Cloning the Repository**
 First, clone the repository to your local machine:
 ```
-`git clone https://github.com/savakroth/User-Authentication-With-Security-Logs.git`
+git clone https://github.com/savakroth/User-Authentication-With-Security-Logs.git
 ```
 
 ### **Installing Dependencies**
 Install the required Python libraries:
 ```
-`pip install -r requirements.txt`
+pip install -r requirements.txt
 ```
 
 ### **Setting Up Sender Email**
@@ -54,7 +54,7 @@ Remove the spaces and pass them to the **sender_password** variable
 ### **Usage**
 To run the application:
 ```
-`streamlit run main.py`
+streamlit run main.py
 ```
 This will start the server, and you should be able to access the application by navigating to **http://localhost:8501** in your web browser.
 
