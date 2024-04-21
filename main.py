@@ -154,50 +154,53 @@ def home():
         st.title("Please Log in to continue!")
 
 def sign_up():
-    st.title("Already Have An Account? Log in")
-    with st.form(key='signup', clear_on_submit=True):
-        st.subheader(':green[Sign Up]')
-        email = st.text_input(':blue[Email]', placeholder='Enter Your Email')
-        username = st.text_input(':blue[Username]', placeholder='Enter Your Username')
-        password1 = st.text_input(':blue[Password]', placeholder='Enter Your Password', type='password')
-        password2 = st.text_input(':blue[Confirm Password]', placeholder='Confirm Your Password', type='password')
+    if scan_login() == False:
+        st.title("Already Have An Account? Log in")
+        with st.form(key='signup', clear_on_submit=True):
+            st.subheader(':green[Sign Up]')
+            email = st.text_input(':blue[Email]', placeholder='Enter Your Email')
+            username = st.text_input(':blue[Username]', placeholder='Enter Your Username')
+            password1 = st.text_input(':blue[Password]', placeholder='Enter Your Password', type='password')
+            password2 = st.text_input(':blue[Confirm Password]', placeholder='Confirm Your Password', type='password')
 
-        if email:
-            if validate_email(email):
-                if email not in get_user_emails():
-                    if validate_username(username):
-                        if username not in get_usernames():
-                            if len(username) >= 2:
-                                if len(password1) >= 6:
-                                    if password1 == password2:
-                                        # Add User to DB
-                                        password_bytes = password2.encode('utf-8')
-                                        hashed_password = hashlib.sha256(password_bytes).hexdigest()
-                            
-                                        insert_user(email, username, hashed_password)
-                                        st.success('Account created successfully!!')
-                                        st.balloons()
+            if email:
+                if validate_email(email):
+                    if email not in get_user_emails():
+                        if validate_username(username):
+                            if username not in get_usernames():
+                                if len(username) >= 2:
+                                    if len(password1) >= 6:
+                                        if password1 == password2:
+                                            # Add User to DB
+                                            password_bytes = password2.encode('utf-8')
+                                            hashed_password = hashlib.sha256(password_bytes).hexdigest()
+                                
+                                            insert_user(email, username, hashed_password)
+                                            st.success('Account created successfully!!')
+                                            st.balloons()
+                                        else:
+                                            st.warning('Passwords Do Not Match')
                                     else:
-                                        st.warning('Passwords Do Not Match')
+                                        st.warning('Password is too Short')
                                 else:
-                                    st.warning('Password is too Short')
+                                    st.warning('Username Too short')
                             else:
-                                st.warning('Username Too short')
+                                st.warning('Username Already Exists')
+
                         else:
-                            st.warning('Username Already Exists')
-
+                            st.warning('Invalid Username')
                     else:
-                        st.warning('Invalid Username')
+                        st.warning('Email Already exists!!')
                 else:
-                    st.warning('Email Already exists!!')
-            else:
-                st.warning('Invalid Email')
+                    st.warning('Invalid Email')
+            
+            btn1, bt2, btn3, btn4, btn5 = st.columns(5)
+
+            with btn3:
+                st.form_submit_button('Sign Up')
+    else:
+        st.title("You are already Logged in!")
         
-        btn1, bt2, btn3, btn4, btn5 = st.columns(5)
-
-        with btn3:
-            st.form_submit_button('Sign Up')
-
 def forgot_password():
     st.title("Account Recovery")
     with st.form("Forgot Password Form", clear_on_submit=True):
@@ -220,43 +223,46 @@ def forgot_password():
 
 
 def login():
-    st.title("Don't have an account? Sign Up")
-    with st.form(key='login', clear_on_submit=True):
-        st.subheader(':green[Log In]')
-        email = st.text_input(':blue[Email]', placeholder='Enter Your Email')
-        username = st.text_input(':blue[Username]', placeholder='Enter Your Username')
-        password = st.text_input(':blue[Password]', placeholder='Enter Your Password', type='password')
-        
-        if email:
-            if validate_email(email):
-                if email in get_user_emails():
-                    if validate_username(username):
-                        if username in get_usernames():
-                            if password:
-                                hashed = hashlib.sha256(password.encode('utf-8')).hexdigest()
+    if scan_login() == False:
+        st.title("Don't have an account? Sign Up")
+        with st.form(key='login', clear_on_submit=True):
+            st.subheader(':green[Log In]')
+            email = st.text_input(':blue[Email]', placeholder='Enter Your Email')
+            username = st.text_input(':blue[Username]', placeholder='Enter Your Username')
+            password = st.text_input(':blue[Password]', placeholder='Enter Your Password', type='password')
+            
+            if email:
+                if validate_email(email):
+                    if email in get_user_emails():
+                        if validate_username(username):
+                            if username in get_usernames():
+                                if password:
+                                    hashed = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
-                                #Confirm password with the database
-                                if validate_password_wemail(email, hashed) == True:
-                                    st.success("Logging In...")
-                                    insert_login_act(username)
-                                    st.balloons()
+                                    #Confirm password with the database
+                                    if validate_password_wemail(email, hashed) == True:
+                                        st.success("Logging In...")
+                                        insert_login_act(username)
+                                        st.balloons()
+                                    else:
+                                        st.warning('Password Does Not Match')
                                 else:
-                                    st.warning('Password Does Not Match')
+                                    st.warning('Please Enter Your Password')
                             else:
-                                st.warning('Please Enter Your Password')
+                                st.warning('Username Does Not Exists')
                         else:
-                            st.warning('Username Does Not Exists')
+                            st.warning('Invalid Username')
                     else:
-                        st.warning('Invalid Username')
+                        st.warning('Email Does Not Exists!!')
                 else:
-                    st.warning('Email Does Not Exists!!')
-            else:
-                st.warning('Invalid Email')
+                    st.warning('Invalid Email')
 
-        btn1, bt2, btn3, btn4, btn5 = st.columns(5)
+            btn1, bt2, btn3, btn4, btn5 = st.columns(5)
 
-        with btn3:
-            st.form_submit_button('Log In')       
+            with btn3:
+                st.form_submit_button('Log In')       
+    else:
+        st.title("You are already Logged in!")
 
 def reset_password():
     st.title("Reset Account Password")
@@ -335,6 +341,7 @@ st.sidebar.title("Welcome To My Page")
 st.sidebar.caption("User Authentication with Security Logs Streamlit App")
 st.sidebar.markdown("---")
 
+
 main_page_sidebar = st.sidebar.empty()
 with main_page_sidebar:
     selected_option = option_menu(
@@ -347,7 +354,7 @@ with main_page_sidebar:
             "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} ) 
 st.sidebar.markdown("---")
 st.sidebar.subheader("Created By")
-st.sidebar.caption("Savakroth LEAV - Github: https://github.com/savakroth")
+st.sidebar.caption("Savakroth LEAV - Github: ")
 st.sidebar.markdown("---")
 
 if selected_option == 'Home':
