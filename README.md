@@ -7,7 +7,7 @@ The User Authentication System with Security Logs is a web application developed
 *****
 
 ### **Features** ⚙️
-**User Registration**: Allows new users to create an account by providing a username, email, and password.
+- **User Registration**: Allows new users to create an account by providing a username, email, and password.
 - **Login System**: Supports user authentication to verify identity and grant access to secured areas.
 - **Password Recovery**: Includes a mechanism for users to recover and reset their passwords in case they forget them.
 - **Security Logging**: Logs all security-related events, including user logins, logouts, and password changes, providing an audit trail for compliance and security monitoring.
