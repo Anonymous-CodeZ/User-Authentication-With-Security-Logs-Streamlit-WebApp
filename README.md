@@ -28,10 +28,11 @@ To run this application, you will need Python installed on your system.
 
 ### **Cloning the Repository**
 First, clone the repository to your local machine:
-`git clone `
+`git clone https://github.com/savakroth/User-Authentication-With-Security-Logs.git`
 
 ### **Installing Dependencies**
 Install the required Python libraries:
+`pip install -r requirements.txt`
 
 ### **Setting Up Sender Email**
 
