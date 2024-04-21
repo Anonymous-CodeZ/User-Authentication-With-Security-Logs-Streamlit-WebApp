@@ -6,7 +6,7 @@ This project is a User Authentication System implemented using Python and Stream
 
 *****
 
-### **Features**
+### **Features** ⚙️
 -**User Registration**: Allows new users to create an account by providing a username, email, and password.
 - **Login System**: Supports user authentication to verify identity and grant access to secured areas.
 - **Password Recovery**: Includes a mechanism for users to recover and reset their passwords in case they forget them.
@@ -15,7 +15,7 @@ Password Reset: Users can change their passwords through a secure interface.
 
 *****
 
-### **Technology Stack**
+### **Technology Stack** 📟
 - **Python**: The core programming language used for backend development.
 - **Streamlit**: A Python library for creating and sharing beautiful, custom web apps for machine learning and data science.
 - **SQLite**: A C-language library that implements a small, fast, self-contained, high-reliability, full-featured SQL database engine.
@@ -69,14 +69,16 @@ This will start the server, and you should be able to access the application by 
 |-- requirements.txt    # Python Dependencies file
 ```
 
-### **Contributing**
+### **Contributing** 🤝
 Contributions to this project are welcome. Please follow the standard fork-pull request workflow. Make sure your code adheres to the existing style, and update or add tests as necessary.
 
 ### **Author**
 - Savakroth LEAV - `https://github.com/savakroth`
 
-### **Acknowledgments**
+### **Acknowledgments** 🎓
 Hats off to:
+```
 - https://github.com/Frost-Codes
 - https://github.com/GauriSP10
+```
 For Inspiring this Project
