@@ -341,7 +341,6 @@ st.sidebar.title("Welcome To My Page")
 st.sidebar.caption("User Authentication with Security Logs Streamlit App")
 st.sidebar.markdown("---")
 
-
 main_page_sidebar = st.sidebar.empty()
 with main_page_sidebar:
     selected_option = option_menu(
@@ -354,7 +353,7 @@ with main_page_sidebar:
             "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} ) 
 st.sidebar.markdown("---")
 st.sidebar.subheader("Created By")
-st.sidebar.caption("Savakroth LEAV - Github: ")
+st.sidebar.caption("Savakroth LEAV - Github: https://github.com/Anonymous-CodeZ")
 st.sidebar.markdown("---")
 
 if selected_option == 'Home':
