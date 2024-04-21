@@ -140,7 +140,7 @@ def insert_logout_act(username):
     conn.commit()
 
 def scan_login():
-    status = list(chain.from_iterable(conn.execute("SELECT log_type from Logs").fetchall()))
+    status = list(chain.from_iterable(conn.execute("SELECT log_type from Logs").fetchall()))[-1]
     if status == 'logged in':
         return True
     return False
