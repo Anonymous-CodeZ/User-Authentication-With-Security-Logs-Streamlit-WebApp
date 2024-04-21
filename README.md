@@ -23,16 +23,17 @@ Password Reset: Users can change their passwords through a secure interface.
 
 *****
 
-###**Installation**
+## **Installation**
 To run this application, you will need Python installed on your system.
 
-###**Cloning the Repository**
+### **Cloning the Repository**
 First, clone the repository to your local machine:
+`git clone `
 
-###**Installing Dependencies**
+### **Installing Dependencies**
 Install the required Python libraries:
 
-###**Setting Up Sender Email**
+### **Setting Up Sender Email**
 
 Setting Up Table Plus
 
