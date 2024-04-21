@@ -7,19 +7,19 @@ This project is a User Authentication System implemented using Python and Stream
 *****
 
 ### **Features**
-- **User Registration**: Allows new users to create an account by providing a username, email, and password.
-- **Login System**: Supports user authentication to verify identity and grant access to secured areas.
-- **Password Recovery**: Includes a mechanism for users to recover and reset their passwords in case they forget them.
-- **Security Logging**: Logs all security-related events, including user logins, logouts, and password changes, providing an audit trail for compliance and security monitoring.
+_ **User Registration**: Allows new users to create an account by providing a username, email, and password.
+_ **Login System**: Supports user authentication to verify identity and grant access to secured areas.
+_ **Password Recovery**: Includes a mechanism for users to recover and reset their passwords in case they forget them.
+_ **Security Logging**: Logs all security-related events, including user logins, logouts, and password changes, providing an audit trail for compliance and security monitoring.
 Password Reset: Users can change their passwords through a secure interface.
 
 *****
 
 ### **Technology Stack**
-- **Python**: The core programming language used for backend development.
-- **Streamlit**: A Python library for creating and sharing beautiful, custom web apps for machine learning and data science.
-- **SQLite**: A C-language library that implements a small, fast, self-contained, high-reliability, full-featured SQL database engine.
-- **Hashlib**: For secure hashing of passwords using SHA-256.
+_ **Python**: The core programming language used for backend development.
+_ **Streamlit**: A Python library for creating and sharing beautiful, custom web apps for machine learning and data science.
+_ **SQLite**: A C-language library that implements a small, fast, self-contained, high-reliability, full-featured SQL database engine.
+_ **Hashlib**: For secure hashing of passwords using SHA-256.
 
 *****
 
@@ -40,8 +40,8 @@ pip install -r requirements.txt
 
 ### **Setting Up Sender Email**
 Inside the `email_request.py`, modify the **sender_email** and **sender_password** variables to set up the verification feature of this app.
-- **sender_email** : The email address which will be used to send verification codes
-- **sender_password** : The Gmail App Password of the email account
+_ **sender_email** : The email address which will be used to send verification codes
+_ **sender_password** : The Gmail App Password of the email account
 
 **To get Gmail App Password:**
 > Go to google Account -> Enable 2FA -> App Password -> Create new App Password
@@ -58,7 +58,16 @@ streamlit run main.py
 ```
 This will start the server, and you should be able to access the application by navigating to **http://localhost:8501** in your web browser.
 
+*****
 
+### **Project Structure**
+```
+|-- main.py             #Main application script with Streamlit UI and DB Logics
+|-- email_request.py    # Module to handle email sending Logics
+|-- data                
+|   |-- database.db     # SQLite database file
+|-- requirements.txt    # Python Dependencies file
+```
 
 
 
