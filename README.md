@@ -40,8 +40,8 @@ pip install -r requirements.txt
 
 ### **Setting Up Sender Email**
 Inside the `email_request.py`, modify the **sender_email** and **sender_password** variables to set up the verification feature of this app.
-_ **sender_email** : The email address which will be used to send verification codes
-_ **sender_password** : The Gmail App Password of the email account
+- **sender_email** : The email address which will be used to send verification codes
+- **sender_password** : The Gmail App Password of the email account
 
 **To get Gmail App Password:**
 > Go to google Account -> Enable 2FA -> App Password -> Create new App Password
