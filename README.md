@@ -32,7 +32,7 @@ First, clone the repository to your local machine:
 
 ### **Installing Dependencies**
 Install the required Python libraries:
-> `pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
 ### **Setting Up Sender Email**
 Inside the `email_request.py`, modify the **sender_email** and **sender_password** variables to set up the verification feature of this app.
