@@ -29,7 +29,7 @@ To run this application, you will need Python installed on your system.
 ### **Cloning the Repository**
 First, clone the repository to your local machine:
 ```
-git clone https://github.com/savakroth/User-Authentication-With-Security-Logs.git
+git clone https://github.com/Anonymous-CodeZ/User-Authentication-With-Security-Logs.git
 ```
 
 ### **Installing Dependencies**
