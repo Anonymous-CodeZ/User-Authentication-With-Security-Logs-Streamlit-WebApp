@@ -6,7 +6,7 @@ from email.mime.multipart import MIMEMultipart
 sender_email = "YOUR SENDER EMAIL"
 sender_password = "YOUR APP PASSWORD"
 
-def sendmail(recipient_email, temp_code, sender_email = "demoquick841@gmail.com", sender_password = "naqxmckyujmcssko"):
+def sendmail(recipient_email, temp_code, sender_email = "YOUR SENDER EMAIL", sender_password = "YOUR APP PASSWORD"):
 
     # Create message container
     message = MIMEMultipart()
